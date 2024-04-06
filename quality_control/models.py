@@ -23,7 +23,9 @@ class BugReport(models.Model):
     project = models.ForeignKey(
         Project,
         related_name='bugs',
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
     )
 
     task = models.ForeignKey(
@@ -40,9 +42,9 @@ class BugReport(models.Model):
         default='New',
     )
 
-    priority = models.CharField(
-        max_length=50,
+    priority = models.IntegerField(
         choices=PRIORITY_CHOICES,
+        default=1,
     )
 
     created_at = models.DateTimeField(auto_now_add=True)
@@ -68,13 +70,14 @@ class FeatureRequest(models.Model):
 
     project = models.ForeignKey(
         Project,
-
-        on_delete=models.CASCADE
+        related_name='features',
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True
     )
 
     task = models.ForeignKey(
         Task,
-
         on_delete=models.SET_NULL,
         null=True,
         blank=True
@@ -86,9 +89,9 @@ class FeatureRequest(models.Model):
         default='New',
     )
 
-    priority = models.CharField(
-        max_length=50,
+    priority = models.IntegerField(
         choices=PRIORITY_CHOICES,
+        default=1,
     )
 
     created_at = models.DateTimeField(auto_now_add=True)
