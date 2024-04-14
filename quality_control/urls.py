@@ -14,7 +14,7 @@ features_patterns = [
 ]
 
 urlpatterns = [
-    path('', views.IndexView.as_view(), name='main'),
+    path('', views.IndexView.as_view(), name='index'),
     path('bugs/', include(bugs_patterns), name='bug_list'),
     path('features/', include(features_patterns), name='feature_list'),
 ]
