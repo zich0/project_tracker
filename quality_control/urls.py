@@ -6,11 +6,13 @@ app_name = 'quality_control'
 bugs_patterns = [
     path('', views.bug_list, name='bug_list'),
     path('<int:bug_id>/', views.BugDetailView.as_view(), name='bug_detail'),
+    path('new/', views.create_bug_report, name='new_bug'),
 ]
 
 features_patterns = [
     path('', views.feature_list, name='feature_list'),
-    path('<int:feature_id>/', views.FeatureDetailView.as_view(), name='feature_id_detail')
+    path('<int:feature_id>/', views.FeatureDetailView.as_view(), name='feature_id_detail'),
+    path('new/', views.create_feature_request, name='new_feature')
 ]
 
 urlpatterns = [

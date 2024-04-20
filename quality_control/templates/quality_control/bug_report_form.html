@@ -1,0 +1,10 @@
+{% extends 'base/bbase.html' %}
+
+{% block content %}
+<h2>Создать новый отчет об ошибках</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Сохранить</button>
+    </form>
+{% endblock %}
