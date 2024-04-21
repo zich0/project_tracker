@@ -4,6 +4,10 @@
     <h1>{{ feature.title }}</h1>
     <p>{{ feature.description }}</p>
 
+    <p><a href="{% url 'quality_control:feature_update' feature.id %}">Изменить запрос на улучшение</a></p>
+
+    <p><a href="{% url 'quality_control:delete_feature' feature.id %}" onclick="return confirm('Вы уверены, что хотите удалить этот запрос на улучшение?');">Удалить запрос на улучшение</a></p>
+
     <p>Статус: {{ feature.status }}</p>
     <p>Приоритет: {{ feature.priority }}</p>
     <p>Связанный проект: {{ feature.project }}</p>

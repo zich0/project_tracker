@@ -3,7 +3,7 @@
 {% block content %}
     <h1>Список запросов на улучшение</h1>
 
-    <p><a href="{% url 'quality_control:new_bug' %}">Добавить новый запрос на улучшение</a></p>
+    <p><a href="{% url 'quality_control:new_feature' %}">Добавить новый запрос на улучшение</a></p>
 
     <ul>
         {% for feature in feature_list %}
